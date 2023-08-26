@@ -17,7 +17,7 @@ body {
 
 @media (min-width: 30rem) {
   body {
-    margin-top: 5rem;
+    margin-top: 0rem;
   }
 }
 
@@ -168,8 +168,21 @@ pre > code {
 }
 
 .container {
-  max-width: 30rem;
+  max-width: 45rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.links {
+  display: inline-block;
+  margin-right: 3rem;
+}
+
+
 

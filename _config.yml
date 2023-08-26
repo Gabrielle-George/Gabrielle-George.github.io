@@ -1,15 +1,48 @@
-# Site settings
-title: Biscuit Theme for Jekyll
-tag_text: Biscuit
-description: Biscuit is a single-page responsive Jekyll theme. This is the most simple and still-good-looking Jekyll theme that you can find.
-# baseurl: "/blog" # the subpath of your site, e.g. /blog
-# url: "https://example.com" # the base hostname & protocol for your site, e.g. http://example.com
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-plugins:
-  - jekyll-seo-tag
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: UVC GSoC project
+description: >- # this means to ignore newlines until "baseurl:"
+  The final project page for Google Summer of Code 2023: Adding UVC hardware timestamp support.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.gsocuvctimestamps2023.com" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  Gabrielle-George
 
 # Build settings
 markdown: kramdown
-exclude: ["README.md"]
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  
+exclude: 
+- tmp/
+- vendor/
+
 sass:
   style: compressed
+  # Site settings
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

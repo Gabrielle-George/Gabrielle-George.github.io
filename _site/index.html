@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="The final project page for Google Summer of Code 2023: Adding UVC hardware timestamp support.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVC GSoC project</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+</head>
+<body>
+  <div class="container">
+    <h2 id="adding-uvc-hardware-timestamp-support-for-libcamera">Adding UVC hardware timestamp support for <strong><a href="https://libcamera.org/">libcamera</a></strong></h2>
+<p>Google Summer of Code 2023 project page</p>
+
+<p><img src="assets/astoria.png" alt="Banner" /></p>
+<ul class="links">
+   
+      <li class="links"><a href="https://patchwork.libcamera.org/project/libcamera/list/?submitter=160">Patches submitted</a></li>
+   
+      <li class="links"><a href="https://summerofcode.withgoogle.com/archive/2023/projects/V95FyCND">GSoC Project Page</a></li>
+   
+      <li class="links"><a href="https://drive.google.com/drive/folders/1gL-HnDRm4eg5gH1AjDR5kOUT1WMUxc4d?usp=sharing">Weekly Slides</a></li>
+   
+      <li class="links"><a href="https://github.com/Gabrielle-George/libcamera">Github</a></li>
+   
+</ul>
+
+<h2 id="about-libcamera">About libcamera</h2>
+
+<p>libcamera is an open source camera stack that makes camera integration easy for Linux and other platforms.</p>
+
+<h2 id="about-this-project">About this project</h2>
+
+<p>One of the camera types supported by libcamera is UVC (USB video class) devices. Most of the commonly used devices that fall under this category are webcams, which may be standalone (such as a logitech webcam) or integrated into a laptop as the built-in camera. When libcamera provides the user with image data from the device, it also provides a timestamp.  This timestamp is taken by the computer (host) when the device driver handles a frame received from the camera.  However, UVC devices may provide metadata with information on when raw frame capture began.  The goal of this project is to use the UVC metadata to calculate this more accurate timestamp and report that to the user.</p>
+
+
+  </div>
+<div id="footer">
+<center>
+<small> This site uses a simple and beautiful Jekyll theme: <a href="https://sblisesivdin.github.io/biscuit">Biscuit</a></small>
+</center>
+</div>
+
+</body>
+</html>

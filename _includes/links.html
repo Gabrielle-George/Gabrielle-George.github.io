@@ -1,0 +1,5 @@
+<ul class="links">
+   {% for item in site.data.links.links %}
+      <li class="links"><a href="{{ item.url }}">{{ item.title }}</a></li>
+   {% endfor %}
+</ul>
