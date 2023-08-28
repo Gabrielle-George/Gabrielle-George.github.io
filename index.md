@@ -26,7 +26,7 @@ For detailed week-by-week logs, see my weekly [slides](https://drive.google.com/
 
 *Linux video nodes*
 
-In Linux, media devices are exposed to the user through "video nodes" accessible in  the <span class="code">/dev/</span> directory. UVC metadata is obtained through streaming on one of these video nodes.  This means that for every UVC device that supports metadata, two video nodes are exposed: one for the actual video stream, and the other for the metadata stream that can be linked to each frame of the video stream.  When you look at the capabilities of the metadata's video node, it specified that the video node supports metadata capture:
+In Linux, media devices are exposed to the user through "video nodes" accessible in  the <span class="code">/dev/</span> directory. UVC metadata is obtained through streaming on one of these video nodes.  This means that for every UVC device that supports metadata, two video nodes are exposed: one for the actual video stream, and the other for the metadata stream that can be linked to each frame of the video stream.  When you look at the capabilities of the metadata's video node, it specifies that the video node supports metadata capture:
 
 ![videoNode](/assets/videoNode.png)
 
@@ -34,7 +34,7 @@ This indicates that to obtain metadata information, you need to open the video d
 
 *UVC metadata buffers*
 
-Configuring streaming on V4L2 involves (at a high level) requesting the driver to allocate memory for the device-provided data to be stored.  In the case of a normal video node, this is image data.  The amount of data can get very large- the amount of space it takes to hold one height x width amount of pixel data!  Memory management, therefore, is no trivial task: copying that much information from the device to the application can add overhead in a scenario where time is valuable. V4L2 handles this by providing userspace-accessible pointers to data buffers that get filled by the device.  When the device fills up a buffer with data, the video node indicates a buffer is ready and users will be able to access the pointers.
+Configuring streaming on V4L2 involves (at a high level) instructing the driver to allocate memory for the device-provided data to be stored.  In the case of a normal video node, this is image data.  The amount of data can get very large- the amount of space it takes to hold one height x width amount of pixel data!  Memory management, therefore, is no trivial task: copying that much information from the device to the application can add overhead in a scenario where time is valuable. V4L2 handles this by providing userspace access to data buffers that get filled by the device.  When the device fills up a buffer with data, the video node indicates a buffer is ready and users will be able to access the data.
 
 This is done through a series of system calls performed on the video node.  
 
@@ -52,7 +52,7 @@ The metadata buffer format provided by V4L2 can be found in the [UVCH](https://w
 
 The data that we are interested in for the purposes of calculating new timestamps, however, is also in the "buf" field of the UVC Metadata Block. According to the [UVC specification](https://www.usb.org/document-library/video-class-v15-document-set), metadata information (referred to as "payload headers") contain the following:
 * Length of the header
-* A bitmap representing which information is specified in the payload
+* A bitmap representing which information is available in the payload
 * A presentation time stamp (PTS) representing the time in device clock units when raw frame capture started
 * A "source clock" value, encoding a source time clock timestamp in device clock units (STC) and the USB bus clock (sof) at that same point in time
 
@@ -146,7 +146,7 @@ I'm extremely grateful to my mentors and everyone who helped answer my questions
 
 * Interactive rebase is almost always what you want
 
-* Use [gitk] https://git-scm.com/docs/gitk with gitk --all &
+* Use [gitk](https://git-scm.com/docs/gitk) with gitk --all &
 
 * Always use <span class="code">git add -p my_file</span>
 
